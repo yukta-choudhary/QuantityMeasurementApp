@@ -28,11 +28,35 @@ public class QuantityMeasurementApp {
         System.out.println("Feet and Inches equal? " + f.equals(i));
     }
 
+    public static void demonstrateYardEquality() {
+        Length y1 = new Length(1.0, Length.LengthUnit.YARDS);
+        Length y2 = new Length(1.0, Length.LengthUnit.YARDS);
+
+        System.out.println("Yards equal? " + y1.equals(y2));
+    }
+
+    public static void demonstrateYardFeetComparison() {
+        Length y = new Length(1.0, Length.LengthUnit.YARDS);
+        Length f = new Length(3.0, Length.LengthUnit.FEET);
+
+        System.out.println("Yard and Feet equal? " + y.equals(f));
+    }
+
+    public static void demonstrateCentimeterInchComparison() {
+        Length cm = new Length(1.0, Length.LengthUnit.CENTIMETERS);
+        Length in = new Length(0.393701, Length.LengthUnit.INCHES);
+
+        System.out.println("Centimeter and Inches equal? " + cm.equals(in));
+    }
 
     public static void main(String[] args) {
     	demonstrateFeetEquality();
     	demonstrateInchesEquality();
         demonstrateFeetInchesComparison();
+        
+        demonstrateYardEquality();
+        demonstrateYardFeetComparison();
+        demonstrateCentimeterInchComparison();
     }
 
 }

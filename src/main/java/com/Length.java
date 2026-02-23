@@ -30,10 +30,61 @@ public class Length {
         this.value = value;
         this.unit = unit;
     }
+    
+    //Convert
+    
+    public static double convert(double value, LengthUnit source, LengthUnit target) {
 
+        // 1. Validate input
+        if (!Double.isFinite(value)) {
+            throw new IllegalArgumentException("Invalid value");
+        }
+
+        if (source == null || target == null) {
+            throw new IllegalArgumentException("Unit cannot be null");
+        }
+
+        // 2. Convert to base unit (inches in your design)
+        double baseValue = value * source.getConversionFactor();
+
+        // 3. Convert to target unit
+        double result = baseValue / target.getConversionFactor();
+
+        // 4. Optional rounding
+        return Math.round(result * 100.0) / 100.0;
+    }
     // Convert to base unit (inches)
     private double convertToBaseUnit() {
         return value * unit.getConversionFactor();
+    }
+    
+    // Convert current Length object to target unit
+    public Length convertTo(LengthUnit targetUnit) {
+
+        // 1. Validate
+        if (targetUnit == null) {
+            throw new IllegalArgumentException("Target unit cannot be null");
+        }
+
+        if (!Double.isFinite(this.value)) {
+            throw new IllegalArgumentException("Invalid value");
+        }
+        
+        if (this.unit == targetUnit) {
+            return this;
+        }
+
+        // 2. Convert to base (inches)
+        double baseValue = this.convertToBaseUnit();
+
+        // 3. Convert to target
+        double result = baseValue / targetUnit.getConversionFactor();
+
+        // 4. Optional rounding
+        result = Math.round(result * 100.0) / 100.0;
+
+        // 5. Return new Length object
+        return new Length(result, targetUnit);
     }
 
     // Compare two Length objects

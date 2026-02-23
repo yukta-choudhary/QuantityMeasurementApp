@@ -66,3 +66,16 @@
 - Strengthens test coverage with conversion, validation, and edge cases.  
 
 [UC5-UnitConversion](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC5-UnitConversion/src)
+
+
+---
+### 📅 UC6 : UnitAddition
+(20-02-2026)
+
+- Implements addition of two **Length** measurements with different units in the same category.  
+- Converts both values to a common base unit (feet) to ensure accurate calculation.  
+- Returns the result in the unit of the first operand while maintaining immutability.  
+- Adds validation for null units, NaN, and infinite values with proper exception handling.  
+- Demonstrates concepts like arithmetic on value objects, unit normalization, precision handling, and reusability of conversion logic.  
+
+[UC6-UnitAddition](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)

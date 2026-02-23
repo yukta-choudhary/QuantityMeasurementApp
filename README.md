@@ -27,3 +27,16 @@
 
 
 [UC2-InchEquality](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC2-InchEquality/src)
+
+---
+### 📅 UC3 : Generic Quantity Length 
+
+(19-02-2026)
+
+* Refactors separate Feet and Inch classes into a single generic **Length** class.
+* Eliminates code duplication using the **DRY principle**.
+* Supports multiple units through an enum.
+* Enables cross-unit comparison (e.g., 1 foot = 12 inches).
+* Improves scalability and maintainability.
+
+[UC3-GenericLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC3-GenericLength/src)

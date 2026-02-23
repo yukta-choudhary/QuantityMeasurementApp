@@ -1,3 +1,5 @@
+### Quantity Measurement App
+
 ### 📅 UC1 : Feet Measurement Equality
 (17-02-2026)
 
@@ -38,7 +40,7 @@
 * Enables cross-unit comparison (e.g., 1 foot = 12 inches).
 * Improves scalability and maintainability.
 
-[UC3-GenericQuantityLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC3-GenericLength/src)
+[UC3-GenericLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC3-GenericLength/src)
 
 ---
 ### 📅 UC4 : YardEquality
@@ -50,7 +52,7 @@
 * Enables comparison across all supported units (feet, inches, yards, centimeters).
 * Demonstrates scalability with minimal code changes.
 
-[UC4-ExtendedUnits](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-YardEquality/src)
+[UC4-YardEquality](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-YardEquality/src)
 
 ---
 ### 📅 UC5 : UnitConversion  
@@ -76,7 +78,7 @@
 - Adds validation for null units, NaN, and infinite values with proper exception handling.  
 - Demonstrates concepts like arithmetic on value objects, unit normalization, precision handling, and reusability of conversion logic.  
 
-[UC6-AdditionOfLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)
+[UC6-UnitAddition](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)
 
 ---
 ### 📅 UC7 : TargetUnitAddition
@@ -88,7 +90,7 @@
 - Ensures immutability by returning a new **Length** object and keeping original objects unchanged.  
 - Adds validation for null, invalid units, NaN, and infinite values while maintaining precision and commutativity.  
 
-[UC7-AdditionWithTargetUnit](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC7-TargetUnitAddition/src)
+[UC7-TargetUnitAddition](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC7-TargetUnitAddition/src)
 
 ---
 ### 📅 UC8 : StandaloneUnit
@@ -100,7 +102,7 @@
 - Maintains backward compatibility; all features from UC1–UC7 work without modifying client code.  
 - Demonstrates principles like Single Responsibility, low coupling, high cohesion, and scalable architecture for future measurement categories.  
 
-[UC8-RefactoringUnitEnum](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC8-StandaloneUnit/src)
+[UC8-StandaloneUnit](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC8-StandaloneUnit/src)
 
 ---
 ### 📅 UC9 : WeightMeasurement 
@@ -124,7 +126,7 @@
 - Ensures type safety using generics while preventing cross-category comparison (length ≠ weight).  
 - Establishes a scalable architecture where adding a new category only requires a new enum implementing **IMeasurable**, with no changes to the core Quantity class.  
 
-[UC10-GenericQuantityRefactor](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
+[UC10-GenericQuantity](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
 
 ---
 ### 📅 UC11 : VolumeEquality
@@ -136,4 +138,16 @@
 - Ensures **type safety and category isolation**, preventing comparisons between volume, length, and weight measurements.  
 - Validates the **scalability and reusability** of the generic design by adding a third category with minimal effort, proving DRY and extensibility.  
 
-[UC11-VolumeMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC11-VolumeEquality/src)  
+[UC11-VolumeMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC11-VolumeEquality/src) 
+
+---
+### 📅 UC12 : SubtractionDivision
+(23-02-2026)
+
+- Adds **subtraction and division** to the generic Quantity design.  
+- Supports **cross-unit subtraction** with implicit or explicit target unit.  
+- Division returns a **dimensionless ratio** for comparison.  
+- Ensures **immutability, validation, and type safety** across categories.  
+- Maintains consistency with equality, conversion, and addition.  
+
+[UC12-SubtractionDivision](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC12-SubtractionDivision/src)  

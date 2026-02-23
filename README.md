@@ -41,7 +41,7 @@
 [UC3-GenericQuantityLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC3-GenericLength/src)
 
 ---
-### 📅 UC4 : Extended Unit Support (Yards & Centimeters)
+### 📅 UC4 : YardEquality
 
 (20-02-2026)
 
@@ -50,4 +50,4 @@
 * Enables comparison across all supported units (feet, inches, yards, centimeters).
 * Demonstrates scalability with minimal code changes.
 
-[UC4-ExtendedUnits](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-ExtendedUnits/src)
+[UC4-ExtendedUnits](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-YardEquality/src)

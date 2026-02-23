@@ -6,56 +6,69 @@ import static org.junit.jupiter.api.Assertions.*;
 public class QuantityMeasurementAppTest {
 
     @Test
-    public void testFeetEquality() {
-        Length f1 = new Length(1.0, Length.LengthUnit.FEET);
-        Length f2 = new Length(1.0, Length.LengthUnit.FEET);
+    public void testEquality_FeetToFeet_SameValue() {
+        Length l1 = new Length(1.0, LengthUnit.FEET);
+        Length l2 = new Length(1.0, LengthUnit.FEET);
 
-        assertTrue(f1.equals(f2));
+        assertTrue(l1.equals(l2));
     }
 
     @Test
-    public void testInchesEquality() {
-        Length i1 = new Length(1.0, Length.LengthUnit.INCHES);
-        Length i2 = new Length(1.0, Length.LengthUnit.INCHES);
+    public void testEquality_InchToInch_SameValue() {
+        Length l1 = new Length(1.0, LengthUnit.INCHES);
+        Length l2 = new Length(1.0, LengthUnit.INCHES);
 
-        assertTrue(i1.equals(i2));
+        assertTrue(l1.equals(l2));
     }
 
     @Test
-    public void testFeetInchesComparison() {
-        Length f = new Length(1.0, Length.LengthUnit.FEET);
-        Length i = new Length(12.0, Length.LengthUnit.INCHES);
+    public void testEquality_FeetToInch_EquivalentValue() {
+        Length l1 = new Length(1.0, LengthUnit.FEET);
+        Length l2 = new Length(12.0, LengthUnit.INCHES);
 
-        assertTrue(f.equals(i));
+        assertTrue(l1.equals(l2));
     }
 
     @Test
-    public void testFeetInequality() {
-        Length f1 = new Length(1.0, Length.LengthUnit.FEET);
-        Length f2 = new Length(2.0, Length.LengthUnit.FEET);
+    public void testEquality_InchToFeet_EquivalentValue() {
+        Length l1 = new Length(12.0, LengthUnit.INCHES);
+        Length l2 = new Length(1.0, LengthUnit.FEET);
 
-        assertFalse(f1.equals(f2));
+        assertTrue(l1.equals(l2));
     }
 
     @Test
-    public void testInchesInequality() {
-        Length i1 = new Length(1.0, Length.LengthUnit.INCHES);
-        Length i2 = new Length(2.0, Length.LengthUnit.INCHES);
+    public void testEquality_FeetToFeet_DifferentValue() {
+        Length l1 = new Length(1.0, LengthUnit.FEET);
+        Length l2 = new Length(2.0, LengthUnit.FEET);
 
-        assertFalse(i1.equals(i2));
+        assertFalse(l1.equals(l2));
     }
 
     @Test
-    public void testNullComparison() {
-        Length f1 = new Length(1.0, Length.LengthUnit.FEET);
+    public void testEquality_InchToInch_DifferentValue() {
+        Length l1 = new Length(1.0, LengthUnit.INCHES);
+        Length l2 = new Length(2.0, LengthUnit.INCHES);
 
-        assertFalse(f1.equals(null));
+        assertFalse(l1.equals(l2));
     }
 
     @Test
-    public void testSameReference() {
-        Length f1 = new Length(1.0, Length.LengthUnit.FEET);
+    public void testEquality_NullComparison() {
+        Length l1 = new Length(1.0, LengthUnit.FEET);
 
-        assertTrue(f1.equals(f1));
+        assertFalse(l1.equals(null));
+    }
+
+    @Test
+    public void testEquality_SameReference() {
+        Length l1 = new Length(1.0, LengthUnit.FEET);
+
+        assertTrue(l1.equals(l1));
+    }
+
+    @Test
+    public void testInvalidUnit() {
+        assertThrows(IllegalArgumentException.class, () -> {new Length(1.0, null);});
     }
 }

@@ -1,69 +1,33 @@
 package com;
 
-// Generic Length class for UC3
 public class Length {
-
-    // Instance variables
-    private double value;
-    private LengthUnit unit;
-
-    // Enum for unit types and conversion factors
-    public enum LengthUnit {
-        FEET(12.0),   // 1 foot = 12 inches
-        INCHES(1.0);  // base unit
-
-        private final double conversionFactor;
-
-        LengthUnit(double conversionFactor) {
-            this.conversionFactor = conversionFactor;
+	private final double value;
+	private final LengthUnit unit;
+	
+	public Length(double value, LengthUnit unit) {
+        if (unit == null) {
+            throw new IllegalArgumentException("Unit cannot be null");
         }
-
-        public double getConversionFactor() {
-            return conversionFactor;
-        }
-    }
-
-    // Constructor
-    public Length(double value, LengthUnit unit) {
         this.value = value;
         this.unit = unit;
     }
-
-    // Convert to base unit (inches)
-    private double convertToBaseUnit() {
-        return value * unit.getConversionFactor();
+	
+	private double convertToBaseUnit() {
+        return this.value * unit.getConversionFactor();
     }
+	
+	 @Override
+	    public boolean equals(Object obj) {
 
-    // Compare two Length objects
-    public boolean compare(Length thatLength) {
-        double thisValue = this.convertToBaseUnit();
-        double thatValue = thatLength.convertToBaseUnit();
-        return Double.compare(thisValue, thatValue) == 0;
-    }
+	        if (this == obj)
+	            return true;
 
-    // Override equals
-    @Override
-    public boolean equals(Object obj) {
+	        if (obj == null || getClass() != obj.getClass())
+	            return false;
 
-        // Reference check
-        if (this == obj) {
-            return true;
-        }
+	        Length that = (Length) obj;
 
-        // Null check
-        if (obj == null) {
-            return false;
-        }
+	        return Double.compare(this.convertToBaseUnit(), that.convertToBaseUnit()) == 0;
+	    }
 
-        // Type check
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        // Cast
-        Length other = (Length) obj;
-
-        // Compare
-        return this.compare(other);
-    }
 }

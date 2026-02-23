@@ -92,7 +92,7 @@
 
 ---
 ### 📅 UC8 : StandaloneUnit
-(27-02-2026)
+(21-02-2026)
 
 - Refactors **LengthUnit** enum into a standalone top-level class to improve design and scalability.  
 - Assigns full responsibility of unit conversion (to and from base unit) to the **LengthUnit** enum.  

@@ -77,3 +77,15 @@
 - Demonstrates concepts like arithmetic on value objects, unit normalization, precision handling, and reusability of conversion logic.  
 
 [UC6-AdditionOfLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)
+
+---
+### 📅 UC7 : TargetUnitAddition
+(20-02-2026)
+
+- Extends UC6 by allowing the result of addition to be returned in any explicitly specified target unit.  
+- Supports flexible use cases where the output must be in a required unit regardless of operand units.  
+- Converts both operands to a common base unit before addition, then converts the result to the target unit.  
+- Ensures immutability by returning a new **Length** object and keeping original objects unchanged.  
+- Adds validation for null, invalid units, NaN, and infinite values while maintaining precision and commutativity.  
+
+[UC7-AdditionWithTargetUnit](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC7-TargetUnitAddition/src)

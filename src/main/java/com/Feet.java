@@ -37,8 +37,4 @@ public class Feet {
         return Double.compare(this.value, other.value) == 0;
     }
 
-    @Override
-    public int hashCode() {
-        return Double.hashCode(value);
-    }
 }

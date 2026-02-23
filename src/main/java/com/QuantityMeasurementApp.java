@@ -48,7 +48,20 @@ public class QuantityMeasurementApp {
 
         System.out.println("Centimeter and Inches equal? " + cm.equals(in));
     }
+    
+    public static Length demonstrateLengthConversion(double value, Length.LengthUnit source, Length.LengthUnit target) {
 
+		// Create source length
+		Length length = new Length(value, source);
+		
+		// Use instance convertTo()
+		return length.convertTo(target);
+	}
+
+    public static Length demonstrateLengthConversion(Length length, Length.LengthUnit target) {
+
+    	return length.convertTo(target);
+	}
     public static void main(String[] args) {
     	demonstrateFeetEquality();
     	demonstrateInchesEquality();
@@ -57,6 +70,17 @@ public class QuantityMeasurementApp {
         demonstrateYardEquality();
         demonstrateYardFeetComparison();
         demonstrateCentimeterInchComparison();
+        
+        // Example 1: 3 Feet to Inches
+        Length lengthInInches = demonstrateLengthConversion(
+                3.0, Length.LengthUnit.FEET, Length.LengthUnit.INCHES);
+        System.out.println("3 Feet in Inches = " + lengthInInches);
+
+        // Example 2: Using overloaded method
+        Length yard = new Length(2.0, Length.LengthUnit.YARDS);
+        Length yardToInches = demonstrateLengthConversion(
+                yard, Length.LengthUnit.INCHES);
+        System.out.println("2 Yards in Inches = " + yardToInches);
     }
 
 }

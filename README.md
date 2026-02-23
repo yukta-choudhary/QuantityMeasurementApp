@@ -39,3 +39,15 @@
 * Improves scalability and maintainability.
 
 [UC3-GenericQuantityLength](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC3-GenericLength/src)
+
+---
+### 📅 UC4 : Extended Unit Support (Yards & Centimeters)
+
+(20-02-2026)
+
+* Extends the generic **Length** design to support additional units.
+* Adds **Yards** and **Centimeters** using enum-based configuration.
+* Enables comparison across all supported units (feet, inches, yards, centimeters).
+* Demonstrates scalability with minimal code changes.
+
+[UC4-ExtendedUnits](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-ExtendedUnits/src)

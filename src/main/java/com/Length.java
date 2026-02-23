@@ -1,122 +1,103 @@
 package com;
 
-// Generic Length class for UC3
+import java.util.Objects;
+
 public class Length {
+	private final double value;
+	private final LengthUnit unit;
+	
+	public Length(double value, LengthUnit unit) {
+		if (!Double.isFinite(value)) {
+			throw new IllegalArgumentException("Value must be a finite number");
+		}
+		if (unit == null) {
+			throw new IllegalArgumentException("Unit must not be null");
+		}
+		this.value = value;
+		this.unit = unit;
+	}
+	
+	public double getValue() {
+		return value;
+	}
+	public LengthUnit getUnit() {
+		return unit;
+	}
 
-    // Instance variables
-    private double value;
-    private LengthUnit unit;
+	private double convertToBaseUnit() {
+		double valueInInches = value * unit.getConversionFactor();
+		return Math.round(valueInInches * 100.0) / 100.0;
+	}
 
-    // Enum for unit types and conversion factors
-    public enum LengthUnit {
-        FEET(12.0),        // 1 foot = 12 inches
-        INCHES(1.0),       // base unit
-        YARDS(36.0),       // 1 yard = 36 inches
-        CENTIMETERS(0.393701); // 1 cm = 0.393701 inches
+	private boolean compare(Length thatLength) {
+		return Double.compare(this.convertToBaseUnit(), thatLength.convertToBaseUnit()) == 0;
+	}
 
-        private final double conversionFactor;
+	public Length convertTo(LengthUnit targetUnit) {
+		if (targetUnit == null) {
+			throw new IllegalArgumentException("Target unit must not be null");
+		}
 
-        LengthUnit(double conversionFactor) {
-            this.conversionFactor = conversionFactor;
-        }
+		double valueInInches = this.convertToBaseUnit();
+		double convertedValue = valueInInches / targetUnit.getConversionFactor();
+		double roundedValue = Math.round(convertedValue * 100.0) / 100.0;
 
-        public double getConversionFactor() {
-            return conversionFactor;
-        }
-    }
+		return new Length(roundedValue, targetUnit);
+	}
 
-    // Constructor
-    public Length(double value, LengthUnit unit) {
-        this.value = value;
-        this.unit = unit;
-    }
-    
-    //Convert
-    
-    public static double convert(double value, LengthUnit source, LengthUnit target) {
+	public static double convert(double value, LengthUnit source, LengthUnit target) {
 
-        // 1. Validate input
-        if (!Double.isFinite(value)) {
-            throw new IllegalArgumentException("Invalid value");
-        }
+		if (!Double.isFinite(value)) {
+			throw new IllegalArgumentException("Value must be a finite number");
+		}
 
-        if (source == null || target == null) {
-            throw new IllegalArgumentException("Unit cannot be null");
-        }
+		if (source == null || target == null) {
+			throw new IllegalArgumentException("Source and target units must not be null");
+		}
 
-        // 2. Convert to base unit (inches in your design)
-        double baseValue = value * source.getConversionFactor();
+		double valueInInches = value * source.getConversionFactor();
+		double result = valueInInches / target.getConversionFactor();
 
-        // 3. Convert to target unit
-        double result = baseValue / target.getConversionFactor();
+		return Math.round(result * 100.0) / 100.0;
+	}
 
-        // 4. Optional rounding
-        return Math.round(result * 100.0) / 100.0;
-    }
-    // Convert to base unit (inches)
-    private double convertToBaseUnit() {
-        return value * unit.getConversionFactor();
-    }
-    
-    // Convert current Length object to target unit
-    public Length convertTo(LengthUnit targetUnit) {
+	@Override
+	public boolean equals(Object o) {
 
-        // 1. Validate
-        if (targetUnit == null) {
-            throw new IllegalArgumentException("Target unit cannot be null");
-        }
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		
 
-        if (!Double.isFinite(this.value)) {
-            throw new IllegalArgumentException("Invalid value");
-        }
+		Length other = (Length) o;
+		return compare(other);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(convertToBaseUnit());
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%.2f %s", value, unit);
+	}
+
+
+	public static void main(String[] args) {
+
+        Length length1 = new Length(1.0, LengthUnit.FEET);
+        Length length2 = new Length(12.0,LengthUnit.INCHES);
+        System.out.println("Are lengths equal? " + length1.equals(length2)); 
+
+        Length length3 = new Length(1.0, LengthUnit.YARDS);
+        Length length4 = new Length(36.0, LengthUnit.INCHES);
+        System.out.println("Are lengths equal? " + length3.equals(length4)); 
         
-        if (this.unit == targetUnit) {
-            return this;
-        }
-
-        // 2. Convert to base (inches)
-        double baseValue = this.convertToBaseUnit();
-
-        // 3. Convert to target
-        double result = baseValue / targetUnit.getConversionFactor();
-
-        // 4. Optional rounding
-        result = Math.round(result * 100.0) / 100.0;
-
-        // 5. Return new Length object
-        return new Length(result, targetUnit);
+        Length length5 = new Length(100.0, LengthUnit.CENTIMETERS);
+        Length length6 = new Length(39.3701, LengthUnit.INCHES);
+        System.out.println("Are lengths equal? " + length5.equals(length6)); 
     }
 
-    // Compare two Length objects
-    public boolean compare(Length thatLength) {
-        double thisValue = this.convertToBaseUnit();
-        double thatValue = thatLength.convertToBaseUnit();
-        return Double.compare(thisValue, thatValue) == 0;
-    }
-
-    // Override equals
-    @Override
-    public boolean equals(Object obj) {
-
-        // Reference check
-        if (this == obj) {
-            return true;
-        }
-
-        // Null check
-        if (obj == null) {
-            return false;
-        }
-
-        // Type check
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        // Cast
-        Length other = (Length) obj;
-
-        // Compare
-        return this.compare(other);
-    }
 }

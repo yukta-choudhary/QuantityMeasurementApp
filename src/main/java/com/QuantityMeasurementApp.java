@@ -2,23 +2,40 @@ package com;
 
 public class QuantityMeasurementApp {
 
+    
+    public static boolean demonstrateLengthEquality(Length l1, Length l2) {
+        return l1.equals(l2);
+    }
+
+    public static void demonstrateFeetEquality() {
+        Length f1 = new Length(1.0, Length.LengthUnit.FEET);
+        Length f2 = new Length(1.0, Length.LengthUnit.FEET);
+
+        System.out.println("Feet equal? " + f1.equals(f2));
+    }
+
+    public static void demonstrateInchesEquality() {
+        Length i1 = new Length(1.0, Length.LengthUnit.INCHES);
+        Length i2 = new Length(1.0, Length.LengthUnit.INCHES);
+
+        System.out.println("Inches equal? " + i1.equals(i2));
+    }
+
+    public static void demonstrateFeetInchesComparison() {
+        Length f = new Length(1.0, Length.LengthUnit.FEET);
+        Length i = new Length(12.0, Length.LengthUnit.INCHES);
+
+        System.out.println("Feet and Inches equal? " + f.equals(i));
+    }
+
+
     public static void main(String[] args) {
-    	demostrateFeetEquality();
-    	demostrateInchesEquality();
+    	demonstrateFeetEquality();
+    	demonstrateInchesEquality();
+        demonstrateFeetInchesComparison();
     }
-    
-    public static void demostrateFeetEquality() {
-    	Feet f1 = new Feet(1.0);
-        Feet f2 = new Feet(1.0);
 
-        System.out.println("Are equal? " + f1.equals(f2));
-    }
-    
-    public static void demostrateInchesEquality() {
-    	Inch i1 = new Inch(1.0);
-        Inch i2 = new Inch(1.0);
-
-        System.out.println("Are equal? " + i1.equals(i2));
-    }
 }
 
+
+    

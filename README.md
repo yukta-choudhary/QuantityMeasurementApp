@@ -55,7 +55,7 @@
 ---
 ### 📅 UC5 : UnitConversion  
 
-(24-02-2026)
+(20-02-2026)
 
 - Extends the **Length** design to support explicit unit-to-unit conversion.  
 - Adds static `convert()` and instance `convertTo()` methods.  

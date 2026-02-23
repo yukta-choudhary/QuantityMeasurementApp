@@ -142,3 +142,15 @@
 - Validates the **scalability and reusability** of the generic design by adding a third category with minimal effort, proving DRY and extensibility.  
 
 [UC11-VolumeMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC11-VolumeEquality/src) 
+
+---
+### 📅 UC12 : SubtractionDivision
+(23-02-2026)
+
+- Adds **subtraction and division** to the generic Quantity design.  
+- Supports **cross-unit subtraction** with implicit or explicit target unit.  
+- Division returns a **dimensionless ratio** for comparison.  
+- Ensures **immutability, validation, and type safety** across categories.  
+- Maintains consistency with equality, conversion, and addition.  
+
+[UC12-SubtractionDivision](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC12-SubtractionDivision/src)  

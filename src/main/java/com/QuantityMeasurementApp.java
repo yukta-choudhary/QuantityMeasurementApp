@@ -21,4 +21,3 @@ public class QuantityMeasurementApp {
         System.out.println("Are equal? " + i1.equals(i2));
     }
 }
-

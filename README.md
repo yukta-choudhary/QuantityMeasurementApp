@@ -52,3 +52,17 @@
 * Demonstrates scalability with minimal code changes.
 
 [UC4-YardEquality](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC4-YardEquality/src)
+
+---
+### 📅 UC5 : UnitConversion  
+
+(20-02-2026)
+
+- Extends the **Length** design to support explicit unit-to-unit conversion.  
+- Adds static `convert()` and instance `convertTo()` methods.  
+- Implements validation for null units, NaN, and infinite values.  
+- Ensures precision handling and round-trip conversion accuracy.  
+- Demonstrates immutability and same-unit optimization.  
+- Strengthens test coverage with conversion, validation, and edge cases.  
+
+[UC5-UnitConversion](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC5-UnitConversion/src)

@@ -166,3 +166,33 @@
 
 
 [UC13-CentralizedArithmetic](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC13-CentralizedArithmetic/src) 
+
+---
+### 📅 UC13: CentralizedArithmetic
+(23-02-2026)
+
+- **Refactored arithmetic operations** (add, subtract, divide) to remove code duplication.  
+- Introduced a **centralized private helper** for validation, base-unit conversion, and operation execution.  
+- Created **ArithmeticOperation enum** (ADD, SUBTRACT, DIVIDE) to cleanly handle operations.  
+- Ensures **consistent error handling**, type checks, and immutability across all operations.  
+- Public API remains **unchanged**; all UC12 behaviors preserved.  
+- Improves **maintainability, readability, and scalability** for future operations (multiplication, modulo, etc.).  
+- Demonstration in QuantityMeasurementApp works exactly as before; results unchanged.  
+
+
+[UC13-CentralizedArithmetic](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC13-CentralizedArithmetic/src) 
+
+---
+
+### 📅 UC14: TemperatureMeasurement
+(23-02-2026)
+
+- Added **TemperatureUnit** (Celsius, Fahrenheit, Kelvin) with conversion support.  
+- Refactored **IMeasurable**: arithmetic operations optional via **default methods**.  
+- Introduced **SupportsArithmetic** interface; lambdas indicate supported operations.  
+- Temperature supports **equality & conversion**; unsupported arithmetic throws exceptions.  
+- **Quantity<U>** checks operation support before execution.  
+- Maintains **cross-category type safety** and backward compatibility with UC1–UC13.  
+- Follows **SOLID principles**, enabling scalable future measurement types.  
+
+[UC14-TemperatureMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC14-TemperatureMeasurement/src) 

@@ -1,5 +1,7 @@
 package com;
 
+import com.interfaces.IMeasurable;
+
 public enum LengthUnit implements IMeasurable {
 
     FEET(1.0),

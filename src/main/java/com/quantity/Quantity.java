@@ -1,6 +1,8 @@
-package com;
+package com.quantity;
 
 import java.util.Objects;
+
+import com.interfaces.IMeasurable;
 
 public final class Quantity<U extends IMeasurable> {
 

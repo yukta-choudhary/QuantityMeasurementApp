@@ -182,3 +182,14 @@
 - Follows **SOLID principles**, enabling scalable future measurement types.  
 
 [UC14-TemperatureMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC14-TemperatureMeasurement/src) 
+
+---
+### 📅 UC15: N-Tier Architecture Refactoring  
+
+- Refactored application to follow **N-Tier Architecture** with clear separation of **Controller, Service, and Domain layers**.  
+- Introduced **DTOs (Data Transfer Objects)** for safe data transfer between layers.  
+- Implemented **Dependency Injection** and **Service-Oriented Design** to reduce tight coupling.  
+- Applied **SOLID Principles (SRP, OCP, LSP, ISP, DIP)** for clean, maintainable architecture.  
+- Improved **testability, error handling, and scalability** for supporting future interfaces.
+
+[UC15-NTierArchitectureefactor](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC15-NTierArchitectureRefactor)

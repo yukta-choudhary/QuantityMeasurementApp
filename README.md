@@ -193,3 +193,15 @@
 - Improved **testability, error handling, and scalability** for supporting future interfaces.
 
 [UC15-NTierArchitectureefactor](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC15-NTierArchitectureRefactor)
+
+---
+
+### 📅 UC16: Database Integration & Persistence  
+
+- Extended N-Tier architecture by adding **database persistence using JDBC and H2**.  
+- Introduced **Repository layer** with `QuantityMeasurementDatabaseRepository` for storing data.  
+- Implemented **ConnectionPool** for efficient database connection management.  
+- Created tables: `quantity_measurement_entity` and `quantity_measurement_history` for storage and audit tracking.  
+- Enabled **scalability and audit tracking** without changing existing business logic.  
+
+[UC16-JDBCPersistence](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC16-JDBCPersistence)

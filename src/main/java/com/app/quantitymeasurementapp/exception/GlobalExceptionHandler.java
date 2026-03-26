@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
 	private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 	private static final String QME_ERROR = "Quantity Measurement Error";
 
-	// ── 1. Bean Validation failures (@Valid / @Validated) ─────────────────
+	// ── 1. Bean Validation failures  ─────────────────
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex,
 			HttpServletRequest request) {

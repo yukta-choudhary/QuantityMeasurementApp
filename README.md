@@ -219,3 +219,15 @@
 - Enhanced the system with **Spring Boot Test (MockMvc), Actuator monitoring, and optional Spring Security**, ensuring maintainability, testability, and enterprise readiness.  
 
 [UC17-SpringBackend](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC17-SpringBackend)
+
+---
+### 📅 UC18: Spring Security – Google Authentication & JWT
+(20-03-2026)
+
+- Integrated Spring Security for securing backend APIs.  
+- Implemented Google Authentication (OAuth2) for user login.  
+- Secured endpoints using authentication and authorization.  
+- Enabled role-based access for different user operations using JWT.  
+
+[UC18-SpringSecurity](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC18-SpringSecurity)
+---

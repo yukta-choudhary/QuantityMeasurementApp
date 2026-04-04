@@ -1,3 +1,5 @@
+# Quantity Measurement App
+
 ### 📅 UC1 : Feet Measurement Equality
 (17-02-2026)
 
@@ -10,7 +12,6 @@
   - Encapsulation and immutability
 
 [UC1-FeetEquality](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC1-FeetEquality)
-
 
 ---
 
@@ -67,7 +68,6 @@
 
 [UC5-UnitConversion](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC5-UnitConversion/src)
 
-
 ---
 ### 📅 UC6 : UnitAddition
 (20-02-2026)
@@ -79,7 +79,6 @@
 - Demonstrates concepts like arithmetic on value objects, unit normalization, precision handling, and reusability of conversion logic.  
 
 [UC6-UnitAddition](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC6-UnitAddition/src)
-
 
 ---
 ### 📅 UC7 : TargetUnitAddition
@@ -117,7 +116,6 @@
 
 [UC9-WeightMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC9-WeightMeasurement/src)
 
-
 ---
 ### 📅 UC10 : GenericQuantity
 (21-02-2026)
@@ -129,7 +127,6 @@
 - Establishes a scalable architecture where adding a new category only requires a new enum implementing **IMeasurable**, with no changes to the core Quantity class.  
 
 [UC10-GenericQuantity](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC10-GenericQuantity/src)
-
 
 ---
 ### 📅 UC11 : VolumeEquality
@@ -172,6 +169,7 @@
 
 ---
 
+
 ### 📅 UC14: TemperatureMeasurement
 (23-02-2026)
 
@@ -184,3 +182,16 @@
 - Follows **SOLID principles**, enabling scalable future measurement types.  
 
 [UC14-TemperatureMeasurement](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC14-TemperatureMeasurement/src) 
+
+---
+### 📅 UC15: N-Tier Architecture Refactoring  
+
+- Refactored application to follow **N-Tier Architecture** with clear separation of **Controller, Service, and Domain layers**.  
+- Introduced **DTOs (Data Transfer Objects)** for safe data transfer between layers.  
+- Implemented **Dependency Injection** and **Service-Oriented Design** to reduce tight coupling.  
+- Applied **SOLID Principles (SRP, OCP, LSP, ISP, DIP)** for clean, maintainable architecture.  
+- Improved **testability, error handling, and scalability** for supporting future interfaces.
+
+[UC15-NTierArchitectureRefactor](https://github.com/yukta-choudhary/QuantityMeasurementApp/tree/feature/UC15-NTierArchitectureRefactor)
+
+---
